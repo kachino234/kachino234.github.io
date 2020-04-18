@@ -1,0 +1,235 @@
+*{box-sizing: border-box;}
+
+body{
+    font-family:poppings, open sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7ecfc;
+}
+
+#home{
+    width: 100%;
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+    margin-bottom: 30px;
+}
+#home-1{
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(to right, black, white);
+    opacity: 0.3;
+}
+
+.home-headline{
+    font-family: poppins;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin: 8px 0;
+}
+.main-text-container{
+    height: 100%;
+    display: table;
+    margin-left: 50vw;
+}
+.main-text{
+    z-index: 13;
+    position: relative;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    width: 500px;
+}
+.btn{
+    background-color: #e17b2a;
+    color: white;
+    margin-top: 10px;
+    text-decoration: none;
+    padding: 10px;
+}
+.btn i{
+    margin-right: 10px;
+}
+/*Hobbies*/
+.hlist-1 li{
+    padding: 10px;
+display: inline-block;
+min-width: 150px;
+}
+
+.hlist-1 p{
+    display: inline-block;
+}
+.hlist-1 svg{
+    margin-right: 4px;
+    color: #e17b2a;
+}
+.font-weight-600{
+font-weight: 800;
+padding-right: 10px;
+}
+.font-weight-600::after{
+    content: ":";
+}
+.h2-title{
+    color: #e17b2a;
+    font-size: 2em;
+}
+.start{
+    text-decoration: none;
+    color: rgb(46, 126, 158);
+    font-weight: 700;
+    font-size: 1.2em;
+
+}
+.title{
+    color: #e17b2a;
+}
+h6{
+    font-weight: 500;
+    font-size: .875em;
+}
+
+.custom-list{
+    list-style-type: none;
+    overflow: hidden;
+}
+.card {
+    border-radius: .5rem;
+    box-shadow: 0 0 8px 0 rgba(17,22,26,.16), 0 4px 8px 0 rgba(17,22,26,.08), 0 8px 16px 0 rgba(17,22,26,.08);
+    margin: 1.5rem 0;
+    overflow: hidden;
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    transition: box-shadow .3s ease-in-out;
+}
+.card-effect {
+    border-radius: 6px;
+    height: 100vh;
+    overflow: hidden;
+    transition: box-shadow .2s ease-in-out;
+    width: 100%;
+    z-index: 2;
+}
+.container{
+    background-color: #f7ecfc;
+    width: 95%;
+    padding: 0 20px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+/*About Design*/
+.profile-image{
+width: 100%;
+height: 100%;
+background-position: center;
+background-size: cover;
+border: 10px solid white;
+}
+.hero-container{
+    width: 400px;
+    height: 400px;
+
+}
+.li, ul{
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.col40 {width: 40%;}
+.col60 {width: 60%;}
+.w50{width: 50%;}
+.w35 {width: 35%;}
+.w65 {width: 65%;}
+.p30 {padding: 30px;}
+/* Flex Controls*/
+.flex{
+    display: flex;
+}
+.row{flex-direction: row;}
+.col{flex-direction: column;}
+.center-items{
+    align-items: center;
+    align-content: center;
+}
+
+.contact-title::after{
+    display: inline-block;
+}
+.contact-title{
+    display: block;
+}
+
+
+/*Form styling*/
+.contactform{
+    height: 500px;
+    width: 100%
+}
+#form-p{
+    margin: 0;
+}
+input[type=text], input[type=email]{
+    padding: 17px 17px 17px 50px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f7ecfc;
+    border: 1px solid #e17b2a;
+    font-size: 1em;
+    font-family: poppins;
+}
+.mright{
+    margin-right: 20px;
+}
+.input-group{
+    position: relative;
+    margin: 10px 20px 10px 0;
+}
+.icn{
+    position: absolute;
+    color: #e17b2a;
+    left: 20px;
+    top: 20px;
+}
+button{
+    width: 100%;
+    background-color: #e17b2a;
+    padding: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+button:hover{
+    background-color: #d16003;
+    cursor: pointer;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #f7ecfc;
+    border: 1px solid #e17b2a;
+    font-size: 1em;
+    resize: vertical;
+    font-family: poppins;
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+   .row{
+       flex-direction: column;
+   }
+   .col40, .col60, .w50, .w35, .w65, .p30
+   {
+       width: 100%;
+   } 
+   .p30{
+       padding: 2px;
+   }
+  }

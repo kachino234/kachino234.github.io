@@ -10,7 +10,9 @@ body{
     font-size: 0.85em;
 }
 .root{
-  margin: 50px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
 }
 
 a{
@@ -40,15 +42,18 @@ h4{
     color: #8D919D;
     text-transform: uppercase;
 }
+
 .card-container{
-    max-width: 700px;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 500px;
 }
 .card-header{
     border-radius: 10px;
     padding: 30px;
-    box-shadow: -10px -10px 40px white,
+    box-shadow: -10px -10px 20px white,
     10px 10px 40px #B2B8D8;
-    margin-bottom: 62px;
+    margin-bottom: 42px;
     justify-content: space-evenly;
 }
 .card{
@@ -64,7 +69,7 @@ div.card:hover{
     5px 5px 10px 0 rgb(209, 212, 233);
 }
 .card-body{
-    margin-bottom: 55px;
+    margin-bottom: 35px;
     text-align: center;
     align-items: center;
     padding: 40px;
@@ -82,13 +87,13 @@ div.card:hover{
     
 }
 button{
-    color:#7A90FD;
-    padding: 20px 80px;
+    display: flex;
+    padding: 1.25em 5em;
     border: none;
     box-shadow: -5px -5px 20px white,
     5px 5px 20px #B2B8D8;
-    border-radius: 35px;
-    
+    border-radius: 50px;
+    width: 47%;
 }
 button:hover{
     cursor: pointer;
@@ -96,4 +101,8 @@ button:hover{
 .btn-1{
     color: white;
     background-color: #7A90FD;
+}
+.btn-2{
+    color:#7A90FD;
+    background-color: #EEF0F8;
 }

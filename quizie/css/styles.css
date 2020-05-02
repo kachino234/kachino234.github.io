@@ -9,7 +9,7 @@
 body {
     background-color: #062A4E;
     font-family: Lato, sans-serif;
-    font-size: 0.85em;
+    font-size: 0.7em;
 }
 
 .root {
@@ -27,12 +27,12 @@ a {
     font-family: Nunito;
     font-style: normal;
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 1.25em;
     line-height: 61px;
     color: white;
 }
 #header {
-    background-color: #495FDE;
+    background-color: #062A4E;
     top: 0px;
     position: fixed;
     width: 100%;
@@ -108,8 +108,8 @@ height: 100%;
 padding-top: 10%;
 margin: 10px 10px;
 font-weight: bold;
-font-size: 40px;
-line-height: 48px;
+font-size: 2rem;
+line-height: 1.2;
 }
 
 .answer-cont {
@@ -164,12 +164,12 @@ button.btn:hover{
     border: 3px solid #2B50DE;
 }
 .select-answer{
-position: absolute;
+position: relative;
 top: 65px;
 width: 80%;
 text-align: left;
 font-weight: 900;
-font-size: 18px;
+font-size: 1.25em;
 
 color: #8F8E8E;
 }
@@ -196,12 +196,12 @@ section.container{
     height: auto;
 }
 .question-cont{
+    padding: 20px;
     margin-top: 80px;
 }
 #question{
-    font-size: 8vw;
+    font-size: 2em;
     text-align: center;
-    margin: 0 20px;
     line-height: 1.2;
     max-height: 200px;
 }

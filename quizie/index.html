@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/styles.css">
+        <script defer src="./js/script.js"></script>
     </head>
     <body>
 <div class="root flex col">
@@ -25,10 +26,14 @@
                         <span id="num-correct">2</span>
                     </p>
                </div>
-              <p id="question">
+              <p id="question" class="paragraph hide">
                 Who scored the fastest goal
                 in premiere league history?
                 and the begining and the 
+              </p>
+              <p id="welcome-msg" class="paragraph">
+                Welcome to the Football Quiz Trivia
+                Click the Start Button to Begin Quiz
               </p>
             </div>
 
@@ -40,8 +45,9 @@
                     <button class="btn">Christiano Ronaldo</button>
                     <button class="btn">Christiano Ronaldo</button>
                 </div>
-                <button name="next" class="btn-next">Next</button>
-                <button name="reset" class="btn-reset hide">Reset</button>
+                <button id="next-btn" name="next" class="btn-next hide">Next</button>
+                <button id="start-btn" name="start" class="btn-next">Start</button>
+                <button id="reset-btn" name="reset" class="btn-reset hide">Reset</button>
             </div>
         </section>
   

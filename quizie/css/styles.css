@@ -17,6 +17,10 @@ body {
     height: 100vh;
     justify-content: center;
 }
+:root{
+    --correct-color: #7CD58A;
+    --wrong-color: #FB7070 ;
+}
 
 a {
     text-decoration: none;
@@ -62,7 +66,7 @@ a {
     height: 36px;
     width: 36px;
     padding: 3px;
-    color: #7CD58A;
+    color: var(--correct-color);
     font-weight: bold;
     border: 3px solid white;
 }
@@ -70,13 +74,15 @@ a {
     padding: 1px;
 }
 
-.wrong {
-    background-color: #FB7070;
+.btn.wrong {
+    background-color: var(--wrong-color);
     font-weight: bolder;
+    color: white;
 }
-.correct{
-    background-color: #7CD58A;
+.btn.correct{
+    background-color: var(--correct-color);
     font-weight: bolder;
+    color: white;
 }
 
 h3 {
@@ -100,7 +106,7 @@ h3 {
     /* Gradient */
     background: linear-gradient(180deg, #1D6FA2 0%, #0E4567 100%);
 }
-#question {
+.paragraph {
 color: white;
 display: inline-block;
 width: 100%;

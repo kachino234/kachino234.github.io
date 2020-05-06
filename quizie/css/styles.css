@@ -6,10 +6,15 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 17px;
+}
+section{
+font-size: .65rem;
+}
 body {
     background-color: #062A4E;
     font-family: Lato, sans-serif;
-    font-size: 0.7em;
 }
 
 .root {
@@ -61,14 +66,11 @@ a {
 .circle {
     display: inline-block;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.5em;
     border-radius: 100%;
-    height: 36px;
-    width: 36px;
-    padding: 3px;
     color: var(--correct-color);
     font-weight: bold;
-    border: 3px solid white;
+  
 }
 #num-correct{
     padding: 1px;
@@ -76,28 +78,25 @@ a {
 
 .btn.wrong {
     background-color: var(--wrong-color);
-    font-weight: bolder;
     color: white;
 }
 .btn.correct{
     background-color: var(--correct-color);
-    font-weight: bolder;
     color: white;
 }
 
 h3 {
-    font-size: 1.95em;
+    font-size: 1.85em;
     color: white;
     font-style: normal;
-    font-weight: bold;
-    line-height: 36px;
+    font-weight: 500;
 }
 
 .container {
     width: 90%;
     margin: 0 auto;
-    max-width: 950px;
-    height: 500px;
+    max-width: 850px;
+    height: 400px;
 }
 
 .question-cont {
@@ -113,7 +112,7 @@ width: 100%;
 height: 100%;
 padding-top: 10%;
 margin: 10px 10px;
-font-weight: bold;
+font-weight: 500;
 font-size: 2rem;
 line-height: 1.2;
 }
@@ -141,7 +140,7 @@ line-height: 1.2;
 }
 
 button {
-    padding: 1em 0;
+    padding: 0.75em 1em ;
     border: none;
     border-radius:12px;
     width:80%;
@@ -156,27 +155,30 @@ button:hover {
 .btn-next,.btn-reset {
     color: white;
     background-color: #495FDE;
-    position: absolute;
-    bottom: 50px;
+    width: 40%;
 }
 
 .btn {
+    text-align: left ;
     font-size: 18px;
     color: #8F8E8E;
     background-color: white;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 button.btn:hover{
-    border: 3px solid #2B50DE;
+    border: 3px solid rgb(180, 195, 255);
+    box-sizing: content-box;
+    
+}
+#start-btn{
+    padding: 25px;
+    font-size: 2em;
+
 }
 .select-answer{
-position: relative;
-top: 65px;
-width: 80%;
 text-align: left;
 font-weight: 900;
 font-size: 1.25em;
-
 color: #8F8E8E;
 }
 
@@ -214,4 +216,14 @@ section.container{
 .root{
     justify-content: start;
 }
+  }
+  @media screen and (max-width:900px){
+    html{
+        font-size: 15px;
+    }
+}
+  @media screen and (max-width:400px){
+      html{
+          font-size: 13px;
+      }
   }

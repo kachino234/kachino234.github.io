@@ -5,8 +5,11 @@ const resetButton = document.getElementById('reset-btn');
 const startButton = document.getElementById('start-btn');
 const answerButtonsElement = document.getElementById('options');
 const welcomeElement = document.getElementById('welcome-msg');
+const currentQuestionCounter = document.getElementById('current-question');
+const maxQuestionCounter = document.getElementById('max-question');
+const CorrectAnswersCounter = document.getElementById('correct-num');
 
-let currentQuestionIndex, shuffledQuestions, points;
+let currentQuestionIndex, shuffledQuestions, points, numCorrectAnswer = 0;
 
 /*Event Listeners */
 nextButton.addEventListener('click', () => {
@@ -23,9 +26,12 @@ startButton.addEventListener('click',startQuiz );
     question.classList.remove('hide');
     startButton.classList.add('hide');
     nextButton.classList.remove('hide');
+    answerButtonsElement.classList.remove('hide')
     shuffledQuestions = myQuestions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     points = 0;
+    CorrectAnswersCounter.innerText = `${numCorrectAnswer}`
+  
     setNextQuestion();
 };
 
@@ -42,10 +48,13 @@ function displayQuestions(question){
       button.classList.add('btn')
       if (answer.correct) {
         button.dataset.correct = answer.correct
+        
       }
       button.addEventListener('click', selectAnswer)
       answerButtonsElement.appendChild(button)
     })
+    currentQuestionCounter.innerText = `${(currentQuestionIndex + 1)}`
+    maxQuestionCounter.innerHTML = `${ shuffledQuestions.length}`
 };
 
 function resetState() {
@@ -56,8 +65,11 @@ function resetState() {
   }
   function selectAnswer(e) {
     const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    const correct = selectedButton.dataset.correct;
+    if (correct){
+      
+      CorrectAnswersCounter.innerText = `${numCorrectAnswer}`
+    }
     Array.from(answerButtonsElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
     })
@@ -65,6 +77,7 @@ function resetState() {
       nextButton.classList.remove('hide')
     } else {
       startButton.innerText = 'Restart'
+      numCorrectAnswer = 0;
       startButton.classList.remove('hide')
     }
   }
@@ -72,6 +85,7 @@ function resetState() {
   function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
+      
       element.classList.add('correct')
     } else {
       element.classList.add('wrong')
@@ -85,7 +99,7 @@ function resetState() {
 
 const myQuestions = [
     {
-        question: "What is the current Arsenal FC coach ?",
+        question: "Who is the current Arsenal FC coach ?",
         answers: [         
                     {solution: "Arsene Wenger", correct: false},
                     {solution: "Jose Mourinho", corect: false},

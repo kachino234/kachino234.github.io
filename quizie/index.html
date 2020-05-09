@@ -17,13 +17,13 @@
     </header>
         <section class="container flex row">
             <div class="question-cont flex col">
-               <div class="card flex row">
-                    <h3 id="question-title">Question 
+               <div id="question-title" class="hide card flex">
+                    <h3>Question 
                         <span id="current-question">1</span>
                          of 
                         <span id="max-question">5</span>
                     </h3>
-                    <p>
+                    <p id="correct-numbers-msg">
                         <span id="correct-num" >0</span> Correct
                     </p>
                </div>
@@ -35,6 +35,11 @@
               <p id="welcome-msg" class="paragraph">
                 Welcome to the Football Quiz Trivia
                 Click the Start Button to Begin Quiz
+              </p>
+              <p id="score-msg" class="paragraph hide">
+                You have successfully completed the Quiz
+                you answered <span id="minimum-score">1</span> out of <span id="maximum-score">5</span>
+                correctly and scored <span id="total-points">50</span> points.
               </p>
             </div>
 

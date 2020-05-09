@@ -5,9 +5,14 @@ const resetButton = document.getElementById('reset-btn');
 const startButton = document.getElementById('start-btn');
 const answerButtonsElement = document.getElementById('options');
 const welcomeElement = document.getElementById('welcome-msg');
+const scoreElement = document.getElementById('score-msg');
 const currentQuestionCounter = document.getElementById('current-question');
+const questionTitle = document.getElementById('question-title');
 const maxQuestionCounter = document.getElementById('max-question');
-const CorrectAnswersCounter = document.getElementById('correct-num');
+const correctAnswersCounter = document.getElementById('correct-num');
+const maximumScoreCounter = document.getElementById('maximum-score');
+const minimumScoreCounter = document.getElementById('minimum-score');
+const totalPointsCounter = document.getElementById('total-points');
 
 let currentQuestionIndex, shuffledQuestions, points, numCorrectAnswer = 0;
 
@@ -24,13 +29,15 @@ startButton.addEventListener('click',startQuiz );
   function startQuiz(){
     welcomeElement.classList.add('hide');
     question.classList.remove('hide');
+    questionTitle.classList.remove('hide');
     startButton.classList.add('hide');
     nextButton.classList.remove('hide');
     answerButtonsElement.classList.remove('hide')
+    scoreElement.classList.add('hide')
     shuffledQuestions = myQuestions.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     points = 0;
-    CorrectAnswersCounter.innerText = `${numCorrectAnswer}`
+    correctAnswersCounter.innerText = `${numCorrectAnswer}`
   
     setNextQuestion();
 };
@@ -38,6 +45,7 @@ startButton.addEventListener('click',startQuiz );
 function setNextQuestion() {
     resetState()
     displayQuestions(shuffledQuestions[currentQuestionIndex])
+    answerButtonsElement.classList.remove('noclick')
   }
 
 function displayQuestions(question){
@@ -67,8 +75,13 @@ function resetState() {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct;
     if (correct){
-      
-      CorrectAnswersCounter.innerText = `${numCorrectAnswer}`
+      numCorrectAnswer++;
+      points = points +5;
+      answerButtonsElement.classList.add('noclick')
+      correctAnswersCounter.innerText = `${numCorrectAnswer}`
+    }
+    else{
+      answerButtonsElement.classList.add('noclick')
     }
     Array.from(answerButtonsElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
@@ -76,16 +89,20 @@ function resetState() {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
       nextButton.classList.remove('hide')
     } else {
+      
+      questionElement.classList.add('hide')
       startButton.innerText = 'Restart'
+      scoreUpdate();
       numCorrectAnswer = 0;
       startButton.classList.remove('hide')
+      
     }
   }
   
+  
   function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if (correct) {
-      
+    if (correct) {  
       element.classList.add('correct')
     } else {
       element.classList.add('wrong')
@@ -95,6 +112,14 @@ function resetState() {
   function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
+  }
+  function scoreUpdate(){
+    minimumScoreCounter.innerText = `${numCorrectAnswer}`;
+    maximumScoreCounter.innerText = `${shuffledQuestions.length}`
+    totalPointsCounter.innerText = `${points}`
+    answerButtonsElement.classList.add('hide')
+      questionTitle.classList.add('hide');
+      scoreElement.classList.remove('hide')
   }
 
 const myQuestions = [

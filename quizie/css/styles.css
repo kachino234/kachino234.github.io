@@ -181,11 +181,50 @@ font-weight: 900;
 font-size: 1.25em;
 color: #8F8E8E;
 }
-
+/* Messages Styling*/
+#score-msg{
+    font-size: 2em;
+    font-weight: 350;
+}
+#total-points {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: blueviolet;
+}
+#max-question{
+    font-size: 0.7em;
+}
+#current-question{
+    font-weight: bolder;
+}
+#question-title{
+    font-weight: 350;
+}
+#minimum-score{
+    font-weight: 500;
+    font-size: 1.5em;
+    color: rgb(38, 177, 38);
+}#maximum-score{
+    font-weight: 500;
+    font-size: 1.5em;
+    color: rgb(230, 230, 230);
+}
+#correct-numbers-msg{
+    font-size: 1.3em;
+    font-weight: 500;
+    color: rgb(231, 231, 231);
+}
+#correct-num{
+    font-weight: bolder;
+    font-size: 1.6em;
+    color: rgb(38, 177, 38);
+}
 .hide{
     display: none;
 }
-
+.noclick{
+    pointer-events: none;
+}
 
 
 

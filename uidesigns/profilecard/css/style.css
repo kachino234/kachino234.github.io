@@ -124,6 +124,7 @@ div.btn-cont > svg{
 }
 #btn-div{
     display: grid;
+    text-decoration: none;
 }
 #btn-div:visited{
     text-decoration: none;

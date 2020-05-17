@@ -27,7 +27,7 @@ main{
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    background-size: 40%;
+    background-size: 60%;
     position: static;
     height: 100vh;
     display: flex;
@@ -40,7 +40,10 @@ main{
     'header header header'
     'sidebar usercard1 usercard2'
     'sidebar footer footer';
-    width: 800px;
+    max-width: 800px;
+    margin: 0 5px;
+    width: 92%;
+
 }
 
 .header-container{
@@ -75,6 +78,9 @@ div.upgrade-wrapper > p{
 .details2-wrapper{
     grid-area: usercard2;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .footer-wrapper{
     grid-area: footer;
@@ -264,6 +270,52 @@ button{
     width: 100%;
 }
 /**/
+
+@media only screen and (max-width: 500px) {
+    .main-container{
+        display: grid;
+        grid-template: 
+        'header'
+        'usercard1'
+        'usercard2'
+        'footer'
+        'sidebar' ;
+        max-width: auto;
+        margin: 0 5px;
+        width: 92%;
+    
+    }
+    main{
+        justify-items: normal;
+        align-items: normal;
+        height: 100%;
+        width: 100%;
+        padding-right: 20px;
+
+    }
+    .main-container{
+        max-width: 90%;
+    }
+    .header-container, .upgrade-wrapper, .details1-wrapper,
+    .details2-wrapper, .footer-wrapper{
+        margin: 10px 0 0 0;
+    }
+    .upgrade-wrapper{
+      
+    }
+    .details1-wrapper{
+        
+    }
+    .details2-wrapper{
+        
+    }
+    .footer-wrapper{
+        
+    }
+
+   
+  }
+
 /**/
 /**/
 /**/
